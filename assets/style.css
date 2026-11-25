@@ -1,0 +1,65 @@
+/* Ιστότοπος του βιβλίου. Χρώματα από την προμετωπίδα: ατσάλινο μπλε του υφάσματος, ένα κόκκινο από το παλτό. */
+:root { --paper:#f6f3ee; --card:#ffffff; --ink:#161a22; --muted:#5a6270; --rule:#d9d4ca; --steel:#1d5573; --red:#a8242b; --hero-ink:#f4f1ea;
+  --serif:"Literata", Georgia, "Times New Roman", serif; --display:"GFS Didot", "Literata", Georgia, serif; --ui:"Commissioner", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+@media (prefers-color-scheme: dark) { :root { --paper:#0f1319; --card:#171c24; --ink:#e8e6e1; --muted:#9aa3b2; --rule:#2a313c; --steel:#8fc9e8; --red:#e2666b; color-scheme: dark; } }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--serif); font-size:18px; line-height:1.6; }
+a { color:var(--steel); text-underline-offset:.15em; }
+a:hover { color:var(--red); }
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible { outline:2px solid var(--steel); outline-offset:2px; }
+.wrap { max-width:46rem; margin:0 auto; padding:0 1.2rem; }
+.wide { max-width:62rem; }
+header.site { border-bottom:1px solid var(--rule); }
+header.site .wrap { display:flex; flex-wrap:wrap; align-items:baseline; gap:.3rem 1.6rem; padding-top:.9rem; padding-bottom:.9rem; max-width:62rem; }
+.brand { font-family:var(--display); font-size:1.15rem; color:var(--ink); text-decoration:none; margin-right:auto; }
+nav.main { display:flex; flex-wrap:wrap; gap:.2rem 1.1rem; font-family:var(--ui); font-size:.9rem; }
+nav.main a { color:var(--muted); text-decoration:none; padding:.2rem 0; border-bottom:2px solid transparent; }
+nav.main a:hover { color:var(--ink); }
+nav.main a[aria-current="page"] { color:var(--ink); border-bottom-color:var(--red); }
+main { padding:2.6rem 0 4rem; }
+h1, h2, h3 { font-family:var(--display); font-weight:400; line-height:1.18; text-wrap:balance; }
+h1 { font-size:2.3rem; margin:0 0 .6rem; }
+h2 { font-size:1.55rem; margin:2.4rem 0 .7rem; }
+h3 { font-size:1.2rem; margin:0 0 .3rem; }
+p { margin:0 0 1.05rem; }
+.lead { font-size:1.18rem; }
+.meta, .small { font-family:var(--ui); font-size:.9rem; color:var(--muted); }
+.hero { position:relative; color:var(--hero-ink); background:#0b1118; }
+.hero img { display:block; width:100%; height:min(72vh, 40rem); object-fit:cover; object-position:center 35%; }
+.hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,12,18,.15) 0%, rgba(8,12,18,.35) 45%, rgba(8,12,18,.9) 100%); }
+.hero .text { position:absolute; left:0; right:0; bottom:0; z-index:1; padding:0 1.2rem 2.2rem; }
+.hero .text > div { max-width:62rem; margin:0 auto; }
+.hero h1 { font-size:clamp(2rem, 5.2vw, 3.6rem); margin:0 0 .5rem; }
+.hero .sub { font-size:clamp(1.05rem, 2.2vw, 1.35rem); margin:0 0 1rem; max-width:40rem; }
+.hero .who { font-family:var(--ui); font-size:1rem; margin:0; }
+.hero .pub { font-family:var(--ui); font-size:.9rem; margin:.35rem 0 0; opacity:.85; }
+.credit { font-family:var(--ui); font-size:.8rem; color:var(--muted); margin:.5rem 0 0; }
+.actions { display:flex; flex-wrap:wrap; gap:.7rem; margin:1.8rem 0 0; font-family:var(--ui); }
+.btn { display:inline-block; padding:.6rem 1.05rem; border:1px solid var(--steel); border-radius:6px; text-decoration:none; font-size:.95rem; }
+.btn.primary { background:var(--steel); color:var(--paper); }
+.btn.primary:hover { background:var(--red); border-color:var(--red); color:var(--paper); }
+ol.chapters { list-style:none; margin:1.6rem 0 0; padding:0; }
+ol.chapters > li { display:grid; grid-template-columns:5.2rem minmax(0,1fr); gap:0 1.2rem; padding:1.5rem 0; border-top:1px solid var(--rule); }
+.num { font-family:var(--ui); font-size:.85rem; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); padding-top:.35rem; }
+.chsub { font-style:italic; color:var(--muted); margin:0 0 .5rem; }
+details { margin-top:.4rem; font-family:var(--ui); font-size:.92rem; }
+summary { cursor:pointer; color:var(--steel); }
+details ul { list-style:none; margin:.5rem 0 0; padding:0; color:var(--muted); }
+details li { padding:.12rem 0; }
+figure { margin:0 0 2.6rem; }
+figure img { display:block; width:100%; height:auto; background:#fff; border:1px solid var(--rule); border-radius:4px; }
+figcaption { font-family:var(--ui); font-size:.9rem; color:var(--muted); margin-top:.55rem; }
+figcaption b { color:var(--ink); font-weight:600; }
+.people { display:grid; gap:1.6rem; margin-top:1.4rem; }
+.tools { position:sticky; top:0; z-index:2; background:var(--paper); padding:1rem 0 .8rem; border-bottom:1px solid var(--rule); display:flex; gap:.8rem; align-items:center; flex-wrap:wrap; font-family:var(--ui); }
+.tools label, #count { font-size:.9rem; color:var(--muted); }
+#count { font-variant-numeric:tabular-nums; }
+input[type=search] { flex:1 1 14rem; min-width:0; font:inherit; font-family:var(--ui); font-size:1rem; padding:.5rem .7rem; border:1px solid var(--rule); border-radius:8px; background:var(--card); color:var(--ink); }
+ol.bib { list-style:none; margin:1.2rem 0 0; padding:0; font-size:1rem; line-height:1.5; }
+ol.bib li { padding-left:1.6rem; text-indent:-1.6rem; margin:0 0 .65rem; overflow-wrap:anywhere; }
+ol.bib li[hidden] { display:none; }
+footer.site { border-top:1px solid var(--rule); padding:1.4rem 0 2.4rem; font-family:var(--ui); font-size:.88rem; color:var(--muted); }
+footer.site .wrap { max-width:62rem; display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; justify-content:space-between; }
+@media (max-width:560px) { body { font-size:17px; } h1 { font-size:1.9rem; } ol.chapters > li { grid-template-columns:minmax(0,1fr); } .num { padding:0 0 .2rem; } .hero img { height:78vh; } }
+@media print { header.site, footer.site, .tools, .actions { display:none; } body { font-size:11pt; background:#fff; color:#000; } a { color:inherit; text-decoration:none; } }
